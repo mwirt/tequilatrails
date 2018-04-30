@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="container post-wrap">
+
+{% include page-intro.html %}
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div class="entry-content">
+        {{ content }}
+      </div>
+      {% if site.disqus.shortname %}
+        {% include disqus_comments.html %}
+      {% endif %}
+    </article>
+  </div>
+
+
+</main>
+  <div class="PageNavigation">
+  {% if page.previous.url %}
+    <a class="prev" href="{{page.previous.url}}"><span class="icon icon--arrow-left">{% include icon-arrow-left.svg %}</span> prev</a>
+  {% endif %}
+  {% if page.next.url %}
+    <a class="next" href="{{page.next.url}}">next <span class="icon icon--arrow-right">{% include icon-arrow-right.svg %}</span></a>
+  {% endif %}
+</div>
+</div>
